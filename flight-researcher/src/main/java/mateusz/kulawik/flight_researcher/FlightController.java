@@ -15,18 +15,18 @@ public class FlightController {
     public final List<Flight> flights = new ArrayList<>();
 
     public FlightController() {
-        flights.add(new Flight("New York", "Warsaw", "PL405", "05-12-2024"));
-        flights.add(new Flight("New York", "Rome", "US205", "06-12-2024"));
-        flights.add(new Flight("Paris", "Rio de Janeiro", "FR455", "06-12-2024"));
-        flights.add(new Flight("Paris", "Warsaw", "FR705", "07-12-2024"));
-        flights.add(new Flight("Rome", "Madrid", "IT200", "08-12-2024"));
-        flights.add(new Flight("London", "Toronto", "UK755", "08-12-2024"));
+        flights.add(new Flight(1 ,"New York", "Warsaw", "PL405", "05-12-2024"));
+        flights.add(new Flight(2, "Paris", "Rio de Janeiro", "FR455", "06-12-2024"));;
+        flights.add(new Flight(3, "Paris", "Warsaw", "FR705", "07-12-2024"));
+        flights.add(new Flight(4 ,"Rome", "Madrid", "IT200", "08-12-2024"));
+        flights.add(new Flight(5, "Madrid", "Rome", "ES505","09-12-2024"));
+
     }
     @GetMapping
     public List<Flight> searchFlights(@RequestParam String departure,
                                       @RequestParam String arrival,
                                       @RequestParam String date){
-        return (List<Flight>) flights.stream()
+        return flights.stream()
                 .filter(flight -> flight.getDeparture().equalsIgnoreCase(departure))
                 .filter(flight -> flight.getArrival().equalsIgnoreCase(arrival))
                 .filter(flight -> flight.getDate().equals(date))

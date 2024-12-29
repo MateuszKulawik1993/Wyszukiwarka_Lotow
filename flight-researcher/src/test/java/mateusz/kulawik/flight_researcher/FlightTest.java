@@ -8,7 +8,7 @@ class FlightTest {
     @Test
     void testFlightConstructorAndGetters() {
         //given
-        Flight flight = new Flight("New York", "Warsaw", "AA123", "05-12-2024");
+        Flight flight = new Flight(1, "New York", "Warsaw", "AA123","05-12-2024");
         //when & then
         assertEquals("New York", flight.getDeparture());
         assertEquals("Warsaw", flight.getArrival());
@@ -18,7 +18,7 @@ class FlightTest {
     @Test
     void testToString() {
         //given
-        Flight flight = new Flight("New York", "Warsaw", "AA123", "05-12-2024");
+        Flight flight = new Flight(1, "New York", "Warsaw", "AA123","05-12-2024");;
         //when
         String expected = "Flight{departure='New York', arrival='Warsaw', flightNumber='AA123', date='05-12-2024'}";
         //then
@@ -27,7 +27,7 @@ class FlightTest {
     @Test
     void testFlightWithEmptyValues() {
         //given
-        Flight flight = new Flight("", "", "", "");
+        Flight flight = new Flight(1, "", "", "","");
         //when & then
         assertEquals("", flight.getDeparture());
         assertEquals("", flight.getArrival());
